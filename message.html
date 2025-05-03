@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أرسل رسالة</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>أرسل رسالة مجهولة</h1>
+    <textarea id="msg" placeholder="اكتب رسالتك هنا..."></textarea>
+    <button onclick="sendMsg()">إرسال</button>
+    <p id="confirmation"></p>
+  </div>
+  <script>
+    function sendMsg() {
+      const msg = document.getElementById('msg').value.trim();
+      if (msg) {
+        document.getElementById('confirmation').innerText = 'تم إرسال رسالتك (وهمياً)';
+        document.getElementById('msg').value = '';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موقع صراحة</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>مرحباً بك في صراحة</h1>
+    <input type="text" id="username" placeholder="اكتب اسمك">
+    <button onclick="generateLink()">احصل على رابطك</button>
+    <p id="link"></p>
+  </div>
+  <script>
+    function generateLink() {
+      const name = document.getElementById('username').value.trim();
+      if (name) {
+        const link = window.location.origin + "/message.html?user=" + encodeURIComponent(name);
+        document.getElementById('link').innerHTML = 'رابطك: <a href="' + link + '">' + link + '</a>';
+      }
+    }
+  </script>
+</body>
+</html>
